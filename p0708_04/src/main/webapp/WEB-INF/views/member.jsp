@@ -8,7 +8,7 @@
 	</head>
 	<body>
 		<h2>회원가입</h2>
-		<form action="" name="" method="get">.
+		<form action="doMember" name="frm" method="get">.
 		<label>아이디</label>
 		<input type="text" name="id" ><br>
 		<label>비밀번호</label>
@@ -26,17 +26,15 @@
 		
 		<label for="hobby">취미</label><br>
 		
-		<input type="checkbox" name="game" value="game" id="game"><br>
+		<input type="checkbox" name="hobby" value="game" id="game"><br>
 		<label for="game">게임</label><br>
-		<input type="checkbox" name="golf" value="golf" id="golf"><br>
+		<input type="checkbox" name="hobby" value="golf" id="golf"><br>
 		<label for="golf">골프</label><br>
-		<input type="checkbox" name="run" value="run" id="run"><br>
+		<input type="checkbox" name="hobby" value="run" id="run"><br>
 		<label for="run">조깅></label><br>
-		<input type="checkbox" name="swim" value="swim" id="swim"><br>
-		<label for="swim">수영</label>
-		
-		
-		
+		<input type="checkbox" name="hobby" value="swim" id="swim"><br>
+		<label for="swim">수영</label><br>
+		<input type="submit" value="전송">
 		
 		</form>
 	</body>
