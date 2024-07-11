@@ -9,9 +9,6 @@ import com.java.dto.BoardDto;
 @Mapper
 public interface BoardMapper {
 
-	static ArrayList<BoardDto> selectList() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	ArrayList<BoardDto> selectList();
 
 }

@@ -14,14 +14,16 @@ public class BoardServiceImpl implements BoardService {
 	@Autowired
 	BoardMapper boardMapper;
 	
-	
 	@Override
-	public ArrayList<BoardDto> selectLsit() {
+	public ArrayList<BoardDto> selectList() {
 		
-		ArrayList<BoardDto> list = BoardMapper.selectList();//mapper 에 연결
-		System.out.println("serviceImpl list : "+list.size()); //list 개수
+		ArrayList<BoardDto> list = boardMapper.selectList();
+		System.out.println("serviceImpl list : "+list.size());
+		
 		
 		return list;
 	}
+
+	
 
 }

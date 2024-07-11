@@ -12,24 +12,17 @@ import com.java.service.BoardService;
 
 @Controller
 public class BoardController {
- 
+
 	@Autowired
-	BoardService boardService;//interface상속
+	BoardService boardService;
 	
 	@RequestMapping("/board/list")
 	public ModelAndView list() {
-		//DB 연결
-		//게시글 전체 가져오기
-		ArrayList<BoardDto> list = boardService.selectLsit(); //boardService에 연결 
+		//db연결
+		ArrayList<BoardDto> list = boardService.selectList();
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("list",list);
 		mv.setViewName("board/list");
-				
-		
 		return mv;
-		
 	}
-	
-	
-	
 }

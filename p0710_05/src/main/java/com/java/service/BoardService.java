@@ -6,6 +6,7 @@ import com.java.dto.BoardDto;
 
 public interface BoardService {
 
-	ArrayList<BoardDto> selectLsit();
+
+	ArrayList<BoardDto> selectList();
 
 }
