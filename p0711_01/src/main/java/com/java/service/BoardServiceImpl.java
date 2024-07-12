@@ -26,7 +26,7 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public BoardDto selectOne(BoardDto bdto) {
-		boardDao.updateBhit(bdto); // 조회수 1증가
+		boardDao.updateBhit(bdto); // 조회수 1증가 
 		BoardDto boardDto = boardDao.selectOne(bdto);
 		
 		return boardDto;
