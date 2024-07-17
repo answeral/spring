@@ -29,6 +29,7 @@
 		insert into commentB values (#{cno},#{bno},#{id},#{cpw},#{ccontent},sysdate)
 	
 	</insert>
+	
 	<!-- 하단댓글 1개 가져오기 -->
 	<select id="selectOneCommentB" resultType="com.java.dto.CommentBDto">
 		select * from commentB where cno= #{cno}
@@ -39,5 +40,11 @@
 	<delete id="deleteCommentB">
 		delete from commentB where cno=#{cno}
 	</delete>
+	
+	<!-- 하단댓글 수정 -->
+	<update id="updateCommentB">
+		update commentB set ccontent=#{ccontent}, cdate=sysdate
+		where cno=#{cno}
+	</update>
 	
 </mapper>

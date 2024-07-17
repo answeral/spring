@@ -48,7 +48,7 @@ public class NoticeServiceImpl implements NoticeService {
 		//하단댓글 저장
 		noticeDao.insertCommentB(commentBDto);
 		//cno생성 후 출력
-		System.out.println("service cno :"+commentBDto.getCno());
+		System.out.println("service cno2 :"+commentBDto.getCno());
 		// 하단댓글 1개 가져오기
 		CommentBDto cBDto = noticeDao.selectOneCommentB(commentBDto);
 		
@@ -60,6 +60,18 @@ public class NoticeServiceImpl implements NoticeService {
 		System.out.println("service cno : "+commentBDto.getCno());
 		noticeDao.deleteCommentB(commentBDto);
 		return ;
+	}
+
+	//하단댓글수정
+	@Override
+	public CommentBDto updateCommentB(CommentBDto commentBDto) {
+		System.out.println("service cno : "+commentBDto.getCno());
+		//하단댓글 수정
+		noticeDao.updateCommentB(commentBDto);
+		// 하단댓글 1개 가져오기
+		CommentBDto cBDto = noticeDao.selectOneCommentB(commentBDto);
+		
+		return cBDto;
 	}
 
 	

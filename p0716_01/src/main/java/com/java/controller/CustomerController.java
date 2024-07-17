@@ -42,21 +42,29 @@ public class CustomerController {
 	}
 	
 	@RequestMapping("/commentBwrite") //하단댓글 추가
-	@ResponseBody // 문자리턴
+	@ResponseBody // 문자리턴(데이터)
 	public CommentBDto commentBwrite(CommentBDto commentBDto) {
 		System.out.println("controller bno : "+commentBDto.getBno());
 		System.out.println("controller ccontent : "+commentBDto.getCcontent());
 		
 		//bno,id,cpw,ccontent
 		CommentBDto cBDto = noticeService.insertCommentB(commentBDto);
-		
-		
 		return cBDto;
 	}
-
+	
+	@RequestMapping("/commentBUpdate") //하단댓글 수정
+	@ResponseBody // 문자리턴(데이터)
+	public CommentBDto commentBUpdate(CommentBDto commentBDto) {
+		System.out.println("controller cno : "+commentBDto.getCno());
+		System.out.println("controller ccontent : "+commentBDto.getCcontent());
+		
+		//bno,id,cpw,ccontent
+		CommentBDto cBDto = noticeService.updateCommentB(commentBDto);
+		return cBDto;
+	}
 	
 	@RequestMapping("/commentBDelete") //하단댓글 삭제
-	@ResponseBody // 문자리턴
+	@ResponseBody // 문자리턴(데이터)
 	public String commentBDelete(CommentBDto commentBDto) {
 		System.out.println("controller cno : "+commentBDto.getCno());
 		
