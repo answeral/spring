@@ -30,7 +30,7 @@
 				       	 			htmlData += '<tr>';
 				       	 			htmlData += '<td>'+ arr[i].careNm +'</td>';
 				       	 			htmlData += '<td>'+ arr[i].careAddr +'</td>';
-				       	 			htmlData += '<td>'+ arr[i].colorCd +'</td>';
+				       	 			htmlData += '<td>'+ arr[i].careTel +'</td>';
 				       	 			htmlData += '<td>'+ arr[i].age +'</td>';
 				       	 			htmlData += '<td>'+ arr[i].specialMark +'</td>';
 				       	 			htmlData += '</tr>';
@@ -63,7 +63,7 @@
 		      <tr>
 		        <th>careNm</th>
 		        <th>careAddr</th>
-		        <th>colorCd</th>
+		        <th>careTel</th>
 		        <th>age</th>
 		        <th>specialMark</th>
 		      </tr>

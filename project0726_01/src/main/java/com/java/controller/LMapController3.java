@@ -1,6 +1,5 @@
 package com.java.controller;
 
-import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
@@ -16,21 +15,15 @@ import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
 import org.springframework.stereotype.Controller;
 
-import com.google.code.geocoder.Geocoder;
-import com.google.code.geocoder.GeocoderRequestBuilder;
-import com.google.code.geocoder.model.GeocodeResponse;
-import com.google.code.geocoder.model.GeocoderRequest;
-import com.google.code.geocoder.model.GeocoderResult;
-import com.google.code.geocoder.model.GeocoderStatus;
-import com.google.code.geocoder.model.LatLng;
+
 
 @Controller
-public class LMapController {
+public class LMapController3 {
 
-	 private static final String API_KEY = "9be6405a74c0492921df254ac040f4b5"; // 카카오 API 키
+	 private static final String API_KEY = ""; // 카카오 API 키
 	
 	 public static void main(String[] args) {
-		    String[] address = { "경상북도 경산시 용성면 사양지길 95","충청남도 태안군 태안읍 남문리 504-6" };          
+		    String address = ("경기도 양주시 남면 감악산로 63-37");          
 		    
 		    Float[] coordinates = geoCoding(address);
 	        

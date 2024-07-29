@@ -4,14 +4,36 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Ftest 페이지</title>
+		<title>Ftest2 페이지</title>
 	</head>
 	<div id="map" style="width:100%;height:500px;"></div>
 
 	<script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=d6a3e4e63ce6514f39f88e53f8535e7e&libraries=services"></script>
 			
 	<script>
-		var addressArr = [];
+	
+	$(function(){
+			$.ajax({
+	       	 		url:"public_data",
+	       	 		type:"post",
+	       	 		data:{},
+	       	 		dataType:"json",
+	       	 		success:function(data){
+	       	 			alert("성공");
+	       	 			console.log("controller data : "+data);
+	       	 		// 데이터 처리
+	       	            let arr = data.response.body.items.item; // 받은 데이터에서 필요한 배열 추출
+	       	            for (let i = 0; i < arr.length; i++) {
+	       	                console.log("careAddr: ", arr[i].careAddr); // 각 항목의 careAddr 출력
+	       	 			}
+					console.log("arr[i].careAddr :"+arr[i].careAddr );	       	 			
+	       	 		},
+	       	 		error:function(){
+	       	 			alert("실패");
+	       	 		}
+	       	    });//ajax
+		});
+		var addressArr = ['전북특별자치도 남원시 왕정동 67','충청북도 옥천군 옥천읍 삼금로 53 (옥천읍, 동물병원) 옥천동물병원','강원도 동해시 대동로 159-13 '];
 		var positionsData = [];
 		
 		var aTemp;
