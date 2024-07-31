@@ -5,9 +5,9 @@
 <mapper namespace="com.java.dao.BoardDao">
 	
 	<!-- board 리스트 -->
-	<select id="selectAll" resultType="com.java.dto.NoticeDto">
-		select * from board order by bgroup desc, bstep asc
-	</select>
+	<select id="selectList" resultType="com.java.dto.BoardDto">
+    select * from happyadopt order by tno desc
+  </select>
 	
 
 </mapper>

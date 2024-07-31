@@ -1,0 +1,32 @@
+@charset "UTF-8";
+body {
+  margin: 0;
+  padding: 0;
+
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 16px;
+}
+table {
+  border-collapse: collapse; /* 테이블 셀의 경계선 없애기 */
+  width: 100%; /* 테이블 폭을 조절 */
+}
+
+.ad_title {
+  margin-top: 150px;
+  padding-top:50px;
+  font-size: 40px;
+}
+
+.vertical-layout {
+    display: flex;
+    flex-direction: column; /* 열을 세로로 배치 */
+}
+.article {
+    display: flex;
+}
+
+.vertical-layout td {
+    border: none; /* 테이블 셀의 경계선 없애기 */
+    padding: 10px; /* 셀의 패딩 조절 */
+    padding-right:20px;
+}

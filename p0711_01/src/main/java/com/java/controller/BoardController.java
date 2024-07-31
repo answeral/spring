@@ -46,8 +46,6 @@ public class BoardController {
 		
 		//1개가 넘어옴 ->dto 여러개->Arraylist
 		BoardDto boardDto = boardService.selectOne(bdto);
-		
-		
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("boardDto",boardDto);
 		mv.setViewName("board/view");
