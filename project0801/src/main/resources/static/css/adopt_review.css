@@ -1,0 +1,164 @@
+@charset "UTF-8";
+/* Main Section */
+section {
+  text-align: center;
+}
+
+.ad_title {
+  margin-top: 150px;
+  padding-top:50px;
+  font-size: 40px;
+}
+
+.wrapper {
+  position: relative;
+}
+
+select {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80px;
+  height: 40px;
+  margin-left: -185px;
+  margin-top: -20px;
+  
+  padding: 5px;
+  border: 1px solid #666666;
+  font-family: inherit;
+  background: url(https://www.midashotel.co.kr/Midas_common/images/homepage/board/search-box-select.png) no-repeat 95% 50%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  text-align: center;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+
+input {
+  position: relative;
+  top: 4px;
+  left: 2px;
+  border: none;
+  font-size: 16px;
+}
+
+input:active,
+input:focus,
+input:hover {
+  outline: none;
+}
+
+button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  margin-left: 106px;
+  margin-top: -20px;
+
+  background: #666666;
+  color: white;
+  border: none;
+}
+
+table {
+  width: 100%;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 40px;
+}
+
+.table-notice {
+  background-color: #BBE309;
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+ 
+}
+
+.table-title1 {
+  text-align: left;
+   font-weight: 700;
+   
+}
+.table-title {
+  text-align: left;
+  
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th {
+  border: 1px solid silver;
+  border-top: 2px solid black;
+}
+
+td {
+  border: 1px solid silver;
+}
+
+
+th,
+td {
+  border-left: hidden;
+  border-right: hidden;
+}
+
+
+.page-num {
+  list-style-type: none;
+  margin-top: 55px;
+  text-align: center;
+}
+
+.page-num li {
+  display: inline-block; 
+  width: 36px;
+  height: 35px;
+  padding: 0;
+  margin:0 5px;
+
+}
+
+.page-num img {
+  display: block; /* 이미지 요소의 기본 디스플레이 속성 */
+}
+
+.num {
+  position: relative;
+  top: -15px;
+  height: 33px !important;
+  margin-left: 15px;
+  margin-right: 15px;
+  border: 1px #989898 solid;
+}
+
+.myNum {
+  border: 1px #989898 solid;
+  background-color: rgb(192, 192, 192);
+  color:white;
+}
+
+.num > div {
+  position: relative;
+  top: 2px;
+}
+
+
+.write {
+  float: right;
+  width: 120px;
+  height: 50px;
+  line-height: 50px;
+
+  margin: 0 30px 50px 0;
+  border: 2px black solid;
+}
