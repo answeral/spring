@@ -10,7 +10,7 @@
 		<title>adopt_review</title>
 		<link rel="stylesheet" href="/css/footer.css">
     	<link rel="stylesheet" href="/css/header.css">
-    	<link rel="stylesheet" href="/css/adopt_review.css">
+    	<link rel="stylesheet" type="text/css" href="/css/adopt_review.css">
     	<link rel="stylesheet" href="/css/main_sec.css">
     	<style>
     	</style>
@@ -28,6 +28,9 @@
 		        <col width="*">
 		        <col width="*%">
 		      </colgroup>
+		      <tr>
+		        <td colspan="4">총개수 : ${map.countAll} 개</td>
+		      </tr>
 		      <!-- 제목부분 -->
 		      <tr>
 		        <th>No.</th>
@@ -42,8 +45,8 @@
 		        <td>사진</td>
 		        <td class="table-title1">입양 후기 작성 시 주의할 내용</td>
 		        <td>admin</td>
-		        <td>조회수</td>
-		        <td>작성일</td>
+		        <td>46</td>
+		        <td>2024-07-31</td>
 		      </tr>
 		       	<!-- 내용부분 -->
       			<!-- for문을 돌려서 여러가지 글 작성 -->
@@ -51,32 +54,52 @@
 		      <tr>
 		        <td>${bdto.tno}</td>
 		        <td>${bdto.tfile} </td>
-		        <td class="table-title">
+		        <td class="table-title" >
 		        <a href="/adopt_write?tno=${bdto.tno}">
 		        <!-- 답글부분 -->
 		        <c:forEach var="i" begin="1" end="${bdto.tindent }" step="1">└▶</c:forEach>
-		        ${bdto.ttitle }
+		        <span style="color: black;">${bdto.ttitle}</span>
 		        </a>
 		        </td>
-		        <td>${bdto.tid}</td>
+		        <td>${bdto.id}</td>
 		        <td>${bdto.thit}</td>
-		        <td>${bdto.tdate}</td>
+		        <td>
+		        	 <fmt:formatDate value="${bdto.tdate}" pattern="yyyy-MM-dd"/>
+		        </td>
 		      </tr>
 		      </c:forEach>
 		    </table>
 
 		    <ul class="page-num">
-		      <li class="first"></li>
-		      <li class="prev"></li>
-		      <li class="num">
-		        <div>1</div>
-		      </li>
-		      <li class="next"></li>
-		      <li class="last"></li>
+		     <!-- first 부분 -->
+		     <c:if test="${map.page<=1}">
+		      	<li class="first"><img src="/adopt_imgs/paging/paging_first.png"></li>
+		     </c:if>
+		     <c:if test="${map.page>1}">
+				<a href="adopt_review?page=1"><li class="first"><img src="/adopt_imgs/paging/paging_first.png"></li></a>
+		     </c:if>
+		       
+		       <!-- prev 부분 -->
+		       <c:if test="${map.page<=1 }">
+		      <li class="prev"><img src="/adopt_imgs/paging/paging_prev.png"></li>
+		       </c:if>
+		       
+		       <c:forEach var="i" begin="${map.startPage}" end="${map.endPage}" step="1">
+		       	<c:if test="${map.page == i }">
+		      		<li class="num"><div>${i}</div></li>
+		       	</c:if>
+
+				<c:if test="${map.page != i}">
+					<A href="adopt_review?page=${i})">
+				</c:if>		       
+		       </c:forEach>
+		      <li class="next"><img src="/adopt_imgs/paging/paging_next.png"></li>
+		      <li class="last"><img src="/adopt_imgs/paging/paging_last.png"></li>
 		    </ul>
-		    
-		    <a href=""><div class="list">답변달기</div></a>
+
+			<a href=""><div class="list">답변달기</div></a>
 		    <a href="Admin_write"><div class="list">쓰기</div></a>
+		   
 		
 	  </section>
 	<jsp:include page="/WEB-INF/views/footer.jsp"/>

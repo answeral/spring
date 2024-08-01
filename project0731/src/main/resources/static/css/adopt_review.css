@@ -85,9 +85,11 @@ table {
 .table-title1 {
   text-align: left;
    font-weight: 700;
+   
 }
 .table-title {
   text-align: left;
+  
 }
 
 table {
@@ -112,22 +114,22 @@ td {
 
 
 .page-num {
-  margin-top: 15px;
+  list-style-type: none;
+  margin-top: 55px;
+  text-align: center;
 }
 
 .page-num li {
+  display: inline-block; 
   width: 36px;
   height: 35px;
   padding: 0;
+  margin:0 5px;
 
 }
 
-.first {
-  background: url(https://www.midashotel.co.kr/Midas_common/images/homepage/board/paging_first.png) no-repeat;
-}
-
-.prev {
-  background: url(https://www.midashotel.co.kr/Midas_common/images/homepage/board/paging_prev.png) no-repeat;
+.page-num img {
+  display: block; /* 이미지 요소의 기본 디스플레이 속성 */
 }
 
 .num {
@@ -144,13 +146,6 @@ td {
   top: 2px;
 }
 
-.next {
-  background: url(https://www.midashotel.co.kr/Midas_common/images/homepage/board/paging_next.png) no-repeat;
-}
-
-.last {
-  background: url(https://www.midashotel.co.kr/Midas_common/images/homepage/board/paging_last.png) no-repeat;
-}
 
 .write {
   float: right;
