@@ -1,0 +1,82 @@
+@charset "UTF-8";
+/* Main Section */
+
+section {
+  text-align: center;
+}
+
+.ad_title {
+  margin-top: 150px;
+  padding-top:50px;
+  font-size: 40px;
+  margin-bottom: 100px;
+}
+
+
+.row{
+    border: 1px solid black;
+    width: 600px;
+    height: 300px;
+    margin: 100px 0px 0px 280px;
+}
+
+#content .title{
+	text-align : center;
+	justify-content : center;
+	margin: -200px 0px 0px 280px;
+	
+}
+
+#content .titleDetail1{
+	text-align : left;
+	justify-content : center;
+	margin: 20px 0px 200px 300px;
+	text-decoration: none;
+}
+#content .titleDetail2{
+	text-align : left;
+	justify-content : center;
+	margin: -190px 0px 0px 300px;
+	text-decoration: none;
+}
+#content .titleDetail3{
+	text-align : left;
+	justify-content : center;
+	margin: 10px 0px 200px 300px;
+	text-decoration: none;
+}
+
+#content .titleDetail4{
+	text-align : left;
+	justify-content : center;
+	margin: -170px 0px 400px 300px;
+	text-decoration: none;
+}
+
+div .content .title{
+	
+	
+}
+
+
+h3{
+	
+	
+}
+
+
+
+p {
+    
+}
+
+
+
+
+
+
+
+
+
+
+
