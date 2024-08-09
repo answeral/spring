@@ -1,0 +1,135 @@
+
+#qnaView{
+	margin: 0;
+  	padding: 0;
+}
+
+section {
+	width: 100%; min-height: 1000px; background-color: #FAF7F0; 
+}
+
+#blank{
+	width: 100%; height: 100px;
+}
+
+#main {
+	position: relative; width: 80%;  margin: 0 auto; 
+    padding-top:40px; 
+    padding-bottom:100px;
+}
+h1 {
+  position: relative;
+  margin-top: 30px;
+  margin-bottom: 0;
+  font-size: 40px;
+  font-weight: 650;
+  text-align: center;
+}
+
+table {
+  position: relative;
+  width: 100%;
+  margin-top: 70px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 40px;
+  border-collapse: collapse;
+  box-sizing: border-box;
+}
+
+th {
+  padding: 10px 0 10px 20px;
+  border: 2px solid black;
+  text-align: left;
+}
+
+td {
+  padding: 5px 0 5px 20px;
+  border: 1px solid silver;
+}
+
+td {
+  text-align: left;
+  border-left: hidden;
+  border-right: hidden;
+}
+
+#title > th {
+	font-weight: 650; background-color: black; 
+	border-bottom: 2px solid black;
+	color: white;
+}
+
+#title > td {
+	border-top: 2px solid black; border-bottom: 2px solid black;
+	box-sizing: border-box;
+}
+
+#bdate {
+	background-color: black; color: white; 
+	padding-left: 50px; font-weight: 650;
+}
+#bhit {
+	background-color: black; color: white; 
+	padding-left: 50px; font-weight: 650;
+}
+
+
+.article {
+  padding: 20px 20px;
+}
+
+.separator {
+  padding: 0 20px 0 20px;
+  color: #e0e0e0;
+}
+
+
+.allList { 
+	position: relative; 
+	float: right;
+	right: 25px;
+	display: flex; width: 375px;
+}
+.allList2 { 
+	position: relative;  
+	float: right;
+	right: 25px;
+	display: flex; width: 375px;
+}
+.allList3 { 
+	position: relative; 
+	float: right;
+	display: flex; width: 130px;
+}
+
+.list {
+  float: right;
+  width: 120px;
+  line-height: 50px;
+
+  margin: 30px 15px 10px 0;
+  background-color: black;
+  border: 2px black solid;
+}
+
+.list > a { 
+	display: block; 
+	width: 120px;
+	color: white;
+	font-weight: 600;
+	text-align: center;
+	
+}
+
+
+#qanswer{
+	top: 70px;
+	padding-top: 40px; 
+}
+
+#text{
+	text-decoration: none;
+	color:black;
+}
+

@@ -1,0 +1,215 @@
+
+#qnaView{
+	margin: 0;
+  	padding: 0;
+}
+
+section {
+	width: 100%; min-height: 1000px; background-color: #FAF7F0; 
+}
+
+#blank{
+	width: 100%; height: 100px;
+}
+
+#main {
+	display: block;
+	position: relative; width: 80%;  margin: 0 auto; 
+    padding-top:40px; 
+    padding-bottom:100px;
+}
+h1 {
+  position: relative;
+  margin-top: 30px;
+  margin-bottom: 0;
+  font-size: 40px;
+  font-weight: 650;
+  text-align: center;
+}
+
+table {
+  position: relative;
+  width: 100%;
+  margin-top: 70px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 40px;
+  border-collapse: collapse;
+  box-sizing: border-box;
+}
+
+th {
+  border: 2px solid black;
+  text-align: left;
+}
+
+td {
+  padding: 5px 0 5px 20px;
+  border: 1px solid silver;
+}
+
+td {
+  text-align: left;
+  border-left: hidden;
+  border-right: hidden;
+}
+
+#title > th {
+	font-weight: 650; background-color: black; 
+	border-bottom: 2px solid black;
+	color: white;
+	padding: 10px 0 10px 20px;
+}
+
+#title > td {
+	border-top: 2px solid black; border-bottom: 2px solid black;
+	box-sizing: border-box;
+}
+
+#bdate {
+	background-color: black; color: white; 
+	padding-left: 45px; font-weight: 650;
+}
+#bhit {
+	background-color: black; color: white; 
+	padding-left: 50px; font-weight: 650;
+}
+
+
+.article {
+  padding: 20px 20px;
+}
+
+.separator {
+  padding: 0 20px 0 20px;
+  color: #e0e0e0;
+}
+
+
+.allList { 
+	position: relative; 
+	right: 35px;
+	float: right;
+	display: flex; width: 500px;
+}
+.allList2 { 
+	position: relative;  
+	right: 0px;
+	float: right;
+	display: flex; width: 260px;
+}
+
+.list {
+  float: right;
+  width: 120px;
+  line-height: 50px;
+
+  margin: 30px 15px 10px 0;
+  background-color: black;
+  border: 2px black solid;
+}
+
+.list > a { 
+	display: block; 
+	width: 120px;
+	color: white;
+	font-weight: 600;
+	text-align: center;
+	
+}
+
+/*댓글 작성하는 부분*/
+
+#rFrm { width: 100%; padding: 15px 0px 0px 0px; display: flex;}
+
+.writeReply{
+	padding-top : 50px; 
+	position: relative; top: 70px;
+}
+
+#replycnt {
+	width: 80%; height: 30px; margin-top: 20px;
+	border-bottom: 2px solid black;
+}
+#replycnt > span{
+	font-size: 15px; font-weight: 550; text-align: left;
+}
+
+input[type="text"] {
+	width: 80%; height: 50px;
+	padding: 0px 10px;
+}
+
+button[type="submit"]{
+	width: 100px; height: 50px;
+	background-color: black; color: white; font-size: 13px;
+	font-weight: 600; border-radius: 10%;
+	margin-left: 8px;
+}
+/*댓글 보여지는 부분*/
+
+#reply{
+	padding-top: 40px;
+	width: 80%;
+	margin: 0px 0px 30px 0px;
+}
+
+
+#title2 > td {
+	font-size: 13px;
+	box-sizing: border-box;
+	display: flex;
+}
+
+#nickname{
+	width: 85%; 
+	height: 25px;
+}
+
+#nickname > span{
+	font-size: 16px; font-weight: 600; text-align: left;
+}
+.replyList { 
+	position: relative;
+	float: right;
+	display: flex; width: 150px;
+	padding-left: 30px;
+	padding-top: 5px; 
+}
+button[type="button"] {
+  float: right;
+  width: 70px;
+  line-height: 30px;
+  margin: 0px 7px 5px 0;
+  background-color: #5C5C5C;
+  border: 1px solid #5C5C5C;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+
+#content {
+	width: 100%; 
+	min-height: 40px;
+	position: relative;
+	font-size: 15px;
+}
+
+#cdate {
+	width: 100%; 
+	height: 30px;
+	position: relative;
+	font-size: 12px;
+}
+
+
+#text{
+	text-decoration: none;
+	color:black;
+}
+
+
+

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.java.dao.ByememDao">
+	<!-- byemem 목록추가 -->
+	<insert id="byeMem">
+		insert into byemem (id,name,gender,content) values (#{id},#{name},#{genderC},#{content})
+	</insert>
+	<!-- byemem 목록(관리자페이지) -->
+	<select id="byememList" resultType="com.java.dto.ByememDto">
+		select * from byemem
+	</select>
+	<select id="chartDraw" resultType="com.java.dto.ByememDto">
+		select content, count(*) as cnt from byemem group by content
+	</select>
+	<select id="chartDraw2" resultType="com.java.dto.ByememDto">
+		select gender, count(*) as gcnt from byemem group by gender
+	</select>
+</mapper>

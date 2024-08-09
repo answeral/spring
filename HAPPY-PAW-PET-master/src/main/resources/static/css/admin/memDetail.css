@@ -1,0 +1,159 @@
+#mypage{ margin: 0; padding: 0;}
+
+section{
+    width: 100%; min-height: 1500px; background-color: #FAF7F0;
+}
+
+/* 서브 이미지 */   
+#blank1{width: 100%; height: 100px;}
+
+#main{position: relative; width: 1000px;  margin: 0 auto; 
+        padding-top:40px; box-sizing: border-box;
+}
+
+/* 회원가입 문구 */
+#sub_top_area {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px 0px 20px;
+    margin: 0;
+}
+
+#sub_top_area>h3 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+/* 프로필 칸 */
+#profile {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+#image{
+    position: relative;
+    padding: 20px 300px 20px 300px ;
+}
+
+img{
+    position: relative;
+    width: 380px; 
+    height: 380px; 
+	background-size: cover; 
+    border-radius: 50%;
+}
+
+#info{
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 20px 0px;
+    margin: 0 auto;
+}
+
+.infoB {
+    width: 430px; 
+    height: 45px; 
+    background: black; 
+    color: white;
+	display: inline-block; 
+    position: relative;  
+    margin: 10px auto; 
+    font-size: 20px; 
+    font-weight: 650;
+	border-radius: 8px; 
+    text-align: center; 
+    padding-top: 7px; 
+    box-sizing: border-box;
+}
+
+
+#blank2{
+    width: 100%; height: 20px;
+}
+
+.hello{
+    width: 430px; 
+    height: 50px; 
+	color: black;
+	display: inline-block;
+	position: relative;
+	font-size: 23px; 
+    font-weight: 650;
+    text-align: center;
+}
+
+
+#pEdit_button{
+	top:20px;
+}
+
+table {
+    margin: 10px auto;
+    border-collapse: collapse; /* 테이블 경계를 합침 */
+    font-size: 16px; 
+    font-weight: 650;
+    top:20px;
+}
+th, td {
+    border-top: 1px solid rgb(209,209,209); /* 테두리 스타일 설정 */
+    border-bottom: 1px solid rgb(209,209,209); /* 테두리 스타일 설정 */
+    padding: 8px; /* 셀 내부 여백 설정 */
+    text-align: center; /* 텍스트 가운데 정렬 */
+}
+th {
+	font-weight: 600;
+    background-color: #f2f2f2; /* 헤더 셀 배경색 */
+}
+
+#mem { width: 600px; height: 100px; }
+#mem > tr,td {border : 1px solid rgb(209,209,209); height: 15px;}
+
+#button {padding-top: 2px; padding-bottom: 2px; padding-left: 35px;}
+#memInfo { width: 150px; height: 25px; background: black;  text-align: center; }
+#memInfo > a { display: block; width: 150px; height: 25px; color: white; font-size: 15px; font-weight: 550; }
+
+
+
+.petlist > h4{ width : 100%; height :  30px; color: #333; 
+			font-size: 18px;
+            font-weight: 600;
+            box-sizing: border-box;
+            margin : 0 auto; margin-bottom: 10px;
+            padding: 0 0 10px 10px; }
+.petlist > h4 > span { font-size: 13px; color: #555;}
+.petlist{margin-top: 20px; margin-bottom: 30px;}
+.petlist > button{ margin-top: 5px; width:130px; height: 35px; background: #342F2F; color: white; font-size: 12px;
+            font-weight: 550; border: none; position: relative; }
+
+#pfile{
+	position: relative;
+    width: 200px; 
+    height: 220px; 
+	background-size: cover; 
+	border-radius: 5px;
+	
+}
+
+#pet {
+		display: inline-block;
+	    width: 550px;
+	    font-size: 14px;
+	    margin: 0 auto;
+	    margin-bottom: 15px;
+	    border-collapse: collapse;
+	    background-color: rgb(246, 246, 246);
+}
+
+#pet > tr,td {border : 1px solid rgb(209,209,209); height: 15px;}
+
+#pBtn{
+	cursor: pointer;
+	width: 180px; height: 25px; background: black; color:white;
+	font-size: 12px; font-weight: 550; 
+}

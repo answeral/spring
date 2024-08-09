@@ -1,0 +1,136 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+section {
+  text-align: center; background-color:  #FAF7F0;
+  width: 100%; min-height: 900px; padding-bottom: 20px;
+}
+
+#blank{width: 100%; height: 100px;}
+
+.container {
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.sidebar {
+    width: 25%;
+    background-color: #f4f4f4;
+    padding: 15px;
+    margin-right: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.main-content {
+    width: 75%;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.main-content > h2{
+	font-size: 25px;
+  	font-weight: 650;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.upload-button {
+    display: block;
+    width: 200px; /* 필요에 따라 조정 */
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #20244F;
+    font-size: 14px;
+    font-weight: 550;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+/* 안구 피부 컨디션 질문지 css */
+#eye-condition, #skin-condition {
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fafafa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#eye-condition h2, #skin-condition h2 {
+    color: #333;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-group input[type="radio"] {
+    margin-right: 10px;
+}
+
+.form-group input[type="radio"] + label {
+    margin-right: 20px;
+}
+
+.radio-group {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* 필요한 경우 줄바꿈 허용 */
+    margin-bottom: 10px;
+}
+
+.radio-group .option-group {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.radio-group .option-group input[type="radio"] {
+    margin-right: 5px;
+}
+
+.radio-group .option-group label {
+    margin-right: 10px;
+    white-space: nowrap; /* 텍스트가 줄바꿈되지 않도록 설정 */
+}

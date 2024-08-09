@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.java.dao.AdoptDao">
+  <!-- 게시판 리스트 -->
+  <select id="selectList" resultType="com.java.dto.AdoptDto">
+    select * from 
+    (select row_number() over(order by topchk desc, bgroup desc, bstep asc) rnum,a.* from happyadoption a
+    <if test="category == 'btitle' or category == 'bcontent'">
+    	where ${category} like '%'||#{searchWord}||'%'
+    </if>
+    <if test="category == 'all'">
+    	where btitle like '%'||#{searchWord}||'%' or bcontent like '%'||#{searchWord}||'%'
+    </if>
+    ) 
+    where rnum between #{startRow} and #{endRow}
+  </select>
+  <!-- 게시글 총개수 -->
+  <select id="selectCount" resultType="int">
+    select count(*) from happyadoption
+    <if test="category == 'btitle' or category == 'bcontent'">
+      where ${category} like '%'||#{searchWord}||'%'
+    </if>
+    <if test="category == 'all'">
+      where btitle like '%'||#{searchWord}||'%' or bcontent like '%'||#{searchWord}||'%'
+    </if>
+    
+  </select>
+  
+  <!-- 게시글 1개 가져오기 : 현재글 -->
+  <select id="selectOne" resultType="com.java.dto.AdoptDto">
+    select * from happyadoption where bno=#{bno}
+  </select>
+  <!-- 게시글 이전글 -->
+  <select id="selectOnePrev" resultType="com.java.dto.AdoptDto">
+    select * from
+	(select row_number() over(order by bgroup desc,bstep asc) rnum, a.* from happyadoption a)
+	where rnum = (
+	select rnum from 
+	(select row_number() over(order by bgroup desc,bstep asc) rnum, a.* from happyadoption a)
+	where bno=#{bno}
+	)-1
+  </select>
+  <!-- 게시글 다음글 -->
+  <select id="selectOneNext" resultType="com.java.dto.AdoptDto">
+    select * from
+	(select row_number() over(order by bgroup desc,bstep asc) rnum, a.* from happyadoption a)
+	where rnum = (
+	select rnum from 
+	(select row_number() over(order by bgroup desc,bstep asc) rnum, a.* from happyadoption a)
+	where bno=#{bno}
+	)+1
+  </select>
+  
+  
+  <!-- 게시글 저장 -->
+  <insert id="insertBoard">
+    insert into happyadoption (bno, id, btitle, bcontent, bdate, bgroup, bstep, bindent, bfile, bhit,topchk)
+    values (adop_seq.nextval, #{id}, #{btitle}, #{bcontent}, sysdate, adop_seq.currval, 0, 0, #{bfile}, 0, 0)
+  </insert>
+  
+  <!-- 조회수 증가 -->
+  <update id="updateBhit">
+    update happyadoption set bhit = bhit+1 where bno=#{bno}
+  </update>
+  
+  <!-- 게시글 삭제 -->
+  <delete id="deleteBoard">
+    delete happyadoption where bno=#{bno}
+  </delete>
+  
+  <!-- 게시글 수정 -->
+  <update id="updateBoard">
+    update happyadoption set btitle=#{btitle},bcontent=#{bcontent},bdate=sysdate,bfile=#{bfile}
+    where bno=#{bno}
+  </update>
+  
+  <!-- 답글 저장 -->
+  <insert id="insertReply">
+    insert into happyadoption values ( adop_seq.nextval,
+    #{id},#{btitle},#{bcontent},sysdate,#{bgroup},#{bstep}+1,#{bindent}+1,#{bfile},0,0 )
+  </insert>
+  
+  <!-- bstep 1증가 -->
+  <update id="updateBstep">
+    update happyadoption set bstep = bstep+1 where bgroup=#{bgroup} and bstep>#{bstep}
+  </update>
+ 
+ <!-- 공지사항 작성 후 저장 -->
+  <insert id="insertNotice">
+    insert into happyadoption (bno, id, btitle, bcontent, bdate, bgroup, bstep, bindent, bfile, bhit, topchk)
+    values (adop_seq.nextval, #{id}, #{btitle}, #{bcontent}, sysdate, adop_seq.currval, 0, 0, #{bfile}, 0, 1)
+  </insert>
+  
+</mapper>

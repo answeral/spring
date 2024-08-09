@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.java.dao.QnaDao">
+	<!-- happyqna list -->
+	<select id="allQList" resultType="com.java.dto.qna.QnaDto">
+     <if test="qna == 0">
+         select * from (
+         select row_number() over (order by qno desc) rnum, a.* from happyqna a
+         <if test="category == 'qtitle' or category == 'qcontent'">
+             where ${category} like '%'||#{searchWord}||'%'
+         </if>
+         <if test="category == 'all'">
+             where qtitle like '%'||#{searchWord}||'%' or qcontent like '%'||#{searchWord}||'%'
+         </if>
+         )
+         where rnum between #{startRow} and #{endRow}
+     </if>
+      <if test="qna == 1">
+          select * from (
+          select row_number() over (order by qno desc) rnum, a.* from happyqna a
+          <if test="category == 'qtitle' or category == 'qcontent'">
+              where ${category} like '%'||#{searchWord}||'%'
+          </if>
+          <if test="category == 'all'">
+              where qtitle like '%'||#{searchWord}||'%' or qcontent like '%'||#{searchWord}||'%'
+          </if>
+          )
+          where id=#{id} and rnum between #{startRow} and #{endRow}
+      </if>
+	</select>
+	
+	<!-- happyqna 게시글 총 개수 -->
+	<select id="selectCount" resultType="int">
+		<if test="qna == 0">
+			select count(*) from happyqna
+            <if test="category == 'qtitle' or category == 'qcontent'">
+                where ${category} like '%'||#{searchWord}||'%'
+            </if>
+            <if test="category == 'all'">
+                where qtitle like '%'||#{searchWord}||'%' or qcontent like '%'||#{searchWord}||'%'
+            </if>
+        </if>
+        <if test="qna == 1">
+            select count(*) from happyqna where
+            <if test="category == 'qtitle' or category == 'qcontent'">
+                ${category} like '%'||#{searchWord}||'%' and
+            </if>
+            <if test="category == 'all'">
+                qtitle like '%'||#{searchWord}||'%' or qcontent like '%'||#{searchWord}||'%' and
+            </if>
+             id=#{id}
+        </if>
+	</select>
+	
+	<!-- happyqna 현재글 가져오기 -->
+	<select id="selectQOne" resultType="com.java.dto.qna.QnaDto">
+		select * from happyqna where qno=#{qno}
+	</select>
+	
+	<!-- happyqna 이전글 가져오기 -->
+	<select id="selectQOnePrev" resultType="com.java.dto.qna.QnaDto">
+		select * from
+		(select a.*,row_number() over (order by qno desc) rnum from happyqna a)
+		where rnum=(select rnum from (select a.*,row_number() over (order by qno desc) rnum from happyqna a)
+		where qno=#{qno})+1
+	</select>
+	
+	<!-- happyqna 다음글 가져오기 -->
+	<select id="selectQOneNext" resultType="com.java.dto.qna.QnaDto">
+		select * from
+		(select a.*,row_number() over (order by qno desc) rnum from happyqna a)
+		where rnum=(select rnum from (select a.*,row_number() over (order by qno desc) rnum from happyqna a)
+		where qno=#{qno})-1
+	</select>
+	
+	<!-- 클릭시 조회수 1 증가 -->
+	<update id="updateQhit">
+		update happyqna set qhit = qhit+1 where qno=#{qno}
+	</update>
+	
+	<!-- 답변상태 업데이트 -->
+	<update id="setAnswer">
+		update happyqna set qanswer = '답변완료' where qno=#{qno}
+	</update>
+	
+	<!-- 질문작성하기 -->
+	<insert id="insertQna">
+		insert into happyqna values (qna_seq.nextval, #{id}, #{qtitle}, #{qcontent}, sysdate, #{qfile}, 0, '미완료')
+	</insert>
+	
+	<!-- qna 게시글 삭제하기 -->
+	<delete id="deleteQna">
+   		delete happyqna where qno=#{qno}
+  	</delete>
+  	
+  	<!-- happyqna 글 1개 가져오기 -->
+	<select id="qnaUpdate" resultType="com.java.dto.qna.QnaDto">
+		select * from happyqna where qno=#{qno}
+	</select>
+	
+  	<!-- qna 게시글 수정 저장 -->
+	<update id="doQnaUpdate">
+		update happyqna set qtitle=#{qtitle}, qcontent=#{qcontent}, qfile=#{qfile} where qno=#{qno}
+	</update>
+</mapper>

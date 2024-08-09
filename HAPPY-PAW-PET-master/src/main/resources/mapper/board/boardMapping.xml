@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.java.dao.BoardDao">
+	<!-- happyboard list -->
+	<select id="allList" resultType="com.java.dto.board.BoardDto">
+		select * from (
+         select row_number() over (order by topchk desc, bno desc) rnum, a.* from happyboard a
+         <if test="category == 'btitle' or category == 'bcontent'">
+             where ${category} like '%'||#{searchWord}||'%'
+         </if>
+         <if test="category == 'all'">
+             where btitle like '%'||#{searchWord}||'%' or bcontent like '%'||#{searchWord}||'%'
+         </if>
+         )
+         where rnum between #{startRow} and #{endRow}
+	</select>
+	<!-- happyboard 게시글 총 개수 -->
+	<select id="selectCount" resultType="int">
+		select count(*) from happyboard
+           <if test="category == 'btitle' or category == 'bcontent'">
+               where ${category} like '%'||#{searchWord}||'%'
+           </if>
+           <if test="category == 'all'">
+               where btitle like '%'||#{searchWord}||'%' or bcontent like '%'||#{searchWord}||'%'
+           </if>
+	</select>
+	
+	<!-- 관리자 공지사항 작성하기 -->
+	<insert id="writeBoard">
+		insert into happyboard values (hboard_seq.nextval, #{id}, #{btitle}, #{bcontent}, sysdate, #{bfile}, 0, #{topchk})
+	</insert>
+	
+	<!-- 공지사항 현재글 가져오기 -->
+	<select id="selectOne" resultType="com.java.dto.board.BoardDto">
+		select * from happyboard where bno=#{bno}
+	</select>
+	<!-- 공지사항 이전글 가져오기 -->
+	<select id="selectOnePrev" resultType="com.java.dto.board.BoardDto">
+		select * from 
+		(select a.*,row_number() over (order by bno desc) rnum from happyboard a)
+		where rnum=(select rnum from (select a.*,row_number() over (order by bno desc) rnum from happyboard a)
+		where bno=#{bno})+1
+	</select>
+	<!-- 공지사항 다음글 가져오기 -->
+	<select id="selectOneNext" resultType="com.java.dto.board.BoardDto">
+		select * from 
+		(select a.*,row_number() over (order by bno desc) rnum from happyboard a)
+		where rnum=(select rnum from (select a.*,row_number() over (order by bno desc) rnum from happyboard a)
+		where bno=#{bno})-1
+	</select>
+	
+	<!-- 조회수 1 증가 -->
+	<update id="updateBhit">
+		update happyboard set bhit = bhit+1 where bno=#{bno}
+	</update>
+	
+	<!-- 공지사항 삭제하기 -->
+	<delete id="deleteBoard">
+		delete happyboard where bno=#{bno}
+	</delete>
+	
+	<!-- 공지사항 수정페이지 view -->
+	<select id="boardUpdate" resultType="com.java.dto.board.BoardDto">
+		select * from happyboard where bno=#{bno}
+	</select>
+	<!-- 수정 저장 -->
+	<update id="doBoardUpdate">
+		update happyboard set btitle=#{btitle}, bcontent=#{bcontent}, bfile=#{bfile}, topchk=#{topchk} 
+		where bno=#{bno}
+	</update>
+
+</mapper>

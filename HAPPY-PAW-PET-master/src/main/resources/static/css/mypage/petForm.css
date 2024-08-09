@@ -1,0 +1,105 @@
+@charset "UTF-8";
+#petForm{height: 1700px;}
+section{position: relative; top:100px; left:0; height:100%;
+	background-color: #FAF7F0; flex:1;}
+.main{position: relative; width: 1100px; height:800px; margin: 0 auto;
+	  padding-top:60px; box-sizing: border-box;}
+.main > h2{ font-size: 35px; color: #342F2F; text-align: center;
+            font-family: Roboto;
+            font-optical-sizing: auto;
+            font-weight: 550;
+            font-style: normal; }
+h4 > span { font-size: 13px; color: #555;}
+form{margin-top: 45px; margin-bottom: 30px;}
+form > button{ margin-top: 14px; width:100%; height: 55px; background: #342F2F; color: white; font-size: 18px;
+            font-weight: bold; border: none; }
+.fieldset_class{
+	    width: 1100px;
+	    font-size: 15px;
+	    margin: 0 auto;
+	    border-top: 1px solid rgb(209, 209, 209);
+	    border-left: none;
+	    border-right: none;
+	    border-bottom: none;
+	    margin-bottom: 15px;
+}
+.fieldset_class dl dt {
+    float: left;
+    width: 250px;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgb(230, 230, 230);
+    background-color: rgb(246, 246, 246);
+}
+.fieldset_class dl dt div {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: url(/image/point.png) no-repeat 45% 88%;
+    position: relative;
+    left: 20px;
+    vertical-align: middle;
+}
+.fieldset_class dl dt label {
+    font-size: 16px;
+    font-weight: 700;
+    position: absolute;
+    padding-left: 25px;
+}
+.fieldset_class dl dd {
+    width: 850px;
+    float: left;
+    box-sizing: border-box;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid rgb(230, 230, 230);
+}
+input[type="text"] { height: 28px; }
+#pname dt { height: 55px;}
+#pname dd { height: 55px;}
+#pname input { width: 276px;}
+#pname dt label { padding-top: 16px;}
+#pname dt div { top: 13px; }
+
+
+#p_weight dt { height: 60px;}
+#p_weight dd { height: 60px;}
+#p_weight input { width: 100px;}
+#p_weight dt label { padding-top: 16px;}
+#p_weight dt div { top: 15px; }
+
+
+#pbirth dt { height: 60px;}
+#pbirth dd { height: 60px;}
+#pbirth dt label { padding-top: 16px; left: 9px;}
+#pbirth dt div { top: 15px; }
+#pbirth #type {display: inline-block;  margin-top: 5px; margin-left: 10px;}
+
+
+#pgender dt { height: 60px;}
+#pgender dd { height: 60px;}
+#pgender dd div { padding-top: 10px;}
+#pgender dd div label { padding-right: 10px;}
+#pgender dt label { padding-top: 16px; left: 9px;}
+#pgender dt div { top: 15px; }
+
+
+#psurgery dt { height: 60px;}
+#psurgery dd { height: 60px;}
+#psurgery dd div { padding-top: 10px;}
+#psurgery dd div label { padding-right: 10px;}
+#psurgery dt label { padding-top: 16px;}
+#psurgery dt div { top: 15px; }
+
+
+#pfile dt { height: 55px;}
+#pfile dd { height: 55px;}
+#pfile input { width: 276px;}
+#pfile dt label { padding-top: 16px;}
+#pfile dt div { top: 13px; }
+#pfile span {display: inline-block;  margin-top: 5px; }
+
+#preview{position: relative;
+    width: 180px;
+    height: 200px;
+	background-size: cover;
+	border-radius: 5px;}

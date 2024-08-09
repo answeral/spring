@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+.banner { display:inline-block; position: fixed; width: 310px; height: 100%;
+			background-color: black ; text-align: center; }
+
+.title {position: relative; 
+		padding-top: 10px; width: 310px; height: 50px; border-bottom: 1px solid rgb(209, 209, 209);
+		color: white; font-size: 23px; font-weight: 650; 
+		box-sizing: border-box; display: inline-block; cursor: pointer;
+		z-index: 500;
+		}
+
+.subbanner { display: block; width: 100px; height: 94%; box-sizing: border-box;
+				border-right: 1px solid rgb(209, 209, 209); }
+.subbanner > .sub_title {  display: flex; width: 100%; height: 50px; box-sizing: border-box; 
+				padding-top: 15px; text-align: center;}
+.subbanner > .sub_title:hover { background-color : rgb(209, 209, 209);
+						> .sub_titlelink {color: black;};  }
+.subbanner > .sub_title > .sub_titlelink { display: block; color: white; width: 100%; height: 100%; font-size: 14px; font-weight: 550;}
+
+.block { width: 210px; background-color:rgb(209, 209, 209); height: 950px; }
+
+
+/*-----------------------------------------------------------*/
+#sub1 {
+	position: relative; top: -16px; left: 68px;
+	width: 210px; height: 100%; background-color: rgb(209, 209, 209); 
+	display: block;
+}
+.sub2 {
+	position: relative; top: 33px;
+	width: 110px; height: 110px; background-color: rgba(0,0,0,0.5); 
+	display: block;
+}
+
+#sub1 > li {
+	width: 100%; height: 50px; text-align: center;
+	padding: 10px 0; box-sizing: border-box;
+}
+#sub1 > li > a{
+	color : black;
+}
+.sub2 > li {
+	width: 100%; height: 50px; text-align: center;
+	padding: 10px 0; box-sizing: border-box;
+}
+
+.sub_link {
+	display: block; width: 100%; height: 40px;
+	color: white; font-size: 14px; font-weight: 550;
+}

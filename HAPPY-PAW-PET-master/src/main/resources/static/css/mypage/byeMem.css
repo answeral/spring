@@ -1,0 +1,99 @@
+@charset "UTF-8";
+
+#findForm{height: 1100px;}       
+section{position: relative; top:100px; left:0; height:100%; 
+	background-color: #FAF7F0; flex:1;}
+.subbanner { position: relative; width: 100%; height: 300px; background: url('/image/back2.jpg') no-repeat 0 -750px;
+			background-size: cover; }
+.main{position: relative; width: 1100px; height:800px; margin: 0 auto; 
+	  padding-top:60px; box-sizing: border-box;}
+.main > h2{ font-size: 35px; color: #342F2F; text-align: center;
+            font-family: Roboto;
+            font-optical-sizing: auto;
+            font-weight: 550;
+            font-style: normal; }
+
+form > h4{ width : 1100px; height :  36px; color: #333; 
+			font-size: 23px;
+            font-weight: 600;
+            box-sizing: border-box;
+            margin : 0 auto; margin-bottom: 10px;
+            padding: 0 0 10px 10px; }
+h4 > span { font-size: 13px; color: #555;}
+form{margin-top: 45px; margin-bottom: 30px;}
+form > button{ margin-top: 14px; width:100%; height: 55px; background: #342F2F; color: white; font-size: 18px;
+            font-weight: bold; border: none; }
+
+.fieldset_class{
+	    width: 1100px;
+	    font-size: 15px;
+	    margin: 0 auto;
+	    border-top: 1px solid rgb(209, 209, 209);
+	    border-left: none;
+	    border-right: none;
+	    border-bottom: none;
+	    margin-bottom: 15px;
+}
+.fieldset_class dl dt {
+    float: left;
+    width: 250px;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgb(230, 230, 230);
+    background-color: rgb(246, 246, 246);
+}
+.fieldset_class dl dt div {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: url(/image/point.png) no-repeat 45% 88%;
+    position: relative;
+    left: 20px;
+    vertical-align: middle;
+}
+
+.fieldset_class dl dt label {
+    font-size: 16px;
+    font-weight: 700;
+    position: absolute;
+    padding-left: 25px;
+}
+
+.fieldset_class dl dd {
+    width: 850px;
+    float: left;
+    box-sizing: border-box;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid rgb(230, 230, 230);
+}
+
+input[type="text"] { height: 28px;}
+input[type="password"] { height: 28px;}
+
+#pwF dt { height: 55px;}
+#pwF dd { height: 55px; display: inline-block;}
+#pwF input { width: 276px;}
+#pwF dt label { padding-top: 16px;}
+#pwF dt div { top: 13px; }
+#pwConfirm { margin-top: 8px; width: 150px; font-size: 13px;}
+
+#nameF dt { height: 55px;}
+#nameF dd { height: 55px; display: inline-block;}
+#nameF input { width: 276px;}
+#nameF dt label { padding-top: 16px;}
+#nameF dt div { top: 13px; }
+#nameConfirm { margin-top: 8px; width: 150px; font-size: 13px;}
+
+#genderF dt { height: 60px;}
+#genderF dd { height: 60px;}
+#genderF dd div { padding-top: 10px;}
+#genderF dd div label { padding-right: 10px;}
+#genderF dt label { padding-top: 16px; left: 9px;}
+#genderF dt div { top: 15px; }
+
+#contentF dt { height: 60px;}
+#contentF dd { height: 60px;}
+#contentF select { width: 276px; height: 39px;}
+#contentF dt label { padding-top: 16px;}
+#contentF dt div { top: 13px; }
+

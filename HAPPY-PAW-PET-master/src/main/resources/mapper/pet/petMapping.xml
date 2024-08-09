@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.java.dao.PetDao">
+	<!-- 관리자페이지 happypet list -->
+	<select id="petList" resultType="com.java.dto.PetDto">
+		select * from happypet
+	</select>
+	<!-- 마이페이지 petList -->
+	<select id="petAll" resultType="com.java.dto.PetDto">
+		select * from happypet where id=#{sessionId}
+	</select>
+	<!-- 반려동물정보 등록 -->
+	<insert id="joinPet">
+		INSERT INTO happypet (id, pname, pweight, pbirth, pgender, psurgery, pfile, pno, page)
+		VALUES (#{id}, #{pname}, #{pweight}, #{pbirth}, #{pgender}, #{psurgery}, NVL(#{pfile}, 'default.jpg'), pet_seq.nextval,
+        EXTRACT(YEAR FROM SYSDATE) - EXTRACT(YEAR FROM #{pbirth}))
+	</insert>
+	<!-- 진단설문지로부터 NEW 반려동물정보 등록 -->
+	<insert id="joinPetFromDiagnosis">
+		INSERT INTO happypet (id, pname, pweight, pbirth, pgender, psurgery, pfile, pno, page)
+		VALUES (#{id}, #{name}, #{weight}, #{birth}, #{sex}, #{surgery}, NVL(#{file}, 'default.jpg'), pet_seq.nextval,
+        EXTRACT(YEAR FROM SYSDATE) - EXTRACT(YEAR FROM #{birth}))
+	</insert>
+	<!-- 반려견 정보 가져오기 -->
+	<select id="InfoPet" resultType="com.java.dto.PetDto">
+		select * from happypet where id=#{id} and pno=#{pno}
+	</select>
+	<!-- pet 정보 업데이트 -->
+	<update id="doUpdatePet">
+		update happypet
+		set pname=#{pname}, pweight=#{pweight}, pbirth=#{pbirth}, pgender=#{pgender}, psurgery=#{psurgery}, pfile=#{pfile}, page=EXTRACT(YEAR FROM SYSDATE) - EXTRACT(YEAR FROM #{pbirth})
+		where id=#{id} and pno=#{pno}
+	</update>
+	<!-- 반려견 정보 삭제 -->
+	<delete id="byePet">
+		delete happypet where id=#{id} and pno=#{pno}
+	</delete>
+</mapper>

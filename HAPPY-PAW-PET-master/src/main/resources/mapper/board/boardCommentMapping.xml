@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.java.dao.BoardCommentDao">
+	<!-- 관리자페이지 공지사항 모두 불러오기 -->
+	<select id="boardCommentList" resultType="com.java.dto.board.BoardCommentDto">
+		select h.bno, id, btitle, bcontent, bdate, bhit, coalesce(c.comment_cnt ,0) as comment_cnt
+		from happyboard h
+		left join (select bno, count(*) as comment_cnt from commenthb group by bno) c
+		on h.bno = c.bno
+	</select>
+	<!-- 관리자페이지 조회수 Top 10 -->
+	<select id="qhitRank" resultType="com.java.dto.board.BoardCommentDto">
+		<![CDATA[
+		select * from 
+		( select h.bno, id, btitle, bcontent, bdate, bhit, coalesce(c.comment_cnt ,0) as comment_cnt
+		from happyboard h
+		left join (select bno, count(*) as comment_cnt from commenthb group by bno) c
+		on h.bno = c.bno
+		order by bhit desc)
+		where rownum <= 10
+		]]>
+		
+	</select>
+	<!-- 관리자페이지 댓글수 Top 10 -->
+	<select id="qcommentRank" resultType="com.java.dto.board.BoardCommentDto">
+		<![CDATA[
+		select * from
+		(
+		select h.bno, id, btitle, bcontent, bdate, bhit, coalesce(c.comment_cnt ,0) as comment_cnt
+		from happyboard h
+		left join (select bno, count(*) as comment_cnt from commenthb group by bno) c
+		on h.bno = c.bno
+		order by comment_cnt desc)
+		where rownum <= 10
+		]]>
+	</select>
+
+</mapper>

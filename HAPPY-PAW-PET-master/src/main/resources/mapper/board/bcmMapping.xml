@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.java.dao.BcmDao">
+	<!-- 특정 게시물 댓글작성자 남녀성비 -->
+	<select id="chartDraw" resultType="com.java.dto.board.BcmDto">
+		select h.bno, gender, count(*) as cnt from happyboard h
+		join commenthb c on h.bno = c.bno
+		join happymem m on c.id = m.id
+		where h.bno = #{bno}
+		group by h.bno, m.gender
+	</select>
+	<!-- top 10 전체 게시물 댓글작성자 남녀성비 -->
+	<select id="cTotalDraw" resultType="com.java.dto.board.BcmDto">
+		<![CDATA[
+		select gender, count(*) as cnt 
+		from 
+		(
+		select * from 
+		( select h.bno, id, btitle, bcontent, bdate, bhit, coalesce(c.comment_cnt ,0) as comment_cnt
+				from happyboard h
+				left join (select bno, count(*) as comment_cnt from commenthb group by bno) c
+				on h.bno = c.bno
+				order by bhit desc)
+				where rownum <= 10
+		) t
+		join commenthb c on t.bno = c.bno
+		join happymem m on c.id = m.id
+		group by m.gender
+		]]>
+	</select>
+
+</mapper>

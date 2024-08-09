@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nanum+Gothic&family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@100..900&display=swap');
+*{margin:0; padding:0;
+         font-family: "Noto Sans KR","Nanum Gothic", sans-serif, 'Inter';
+         font-weight: 400;
+         font-style: normal;  }
+ul{list-style: none; }
+a{text-decoration: none;}
+
+
+header{ position: fixed; left:0; top:0; z-index: 100; width: 100%; height: 100px; background: black;}
+
+nav{width: 95%; height: 90px; margin:5px 15px 15px 0px; display: flex; }
+
+#logo {width: 400px; margin-left: 30px; box-sizing: border-box;}
+   
+#logo a{ padding-left:20px ; color: white; 
+		font-size: 35px; font-family: Roboto; font-weight: 800; 
+		line-height:80px; display: inline-block;}
+
+#logoImg { position: fixed; top: 18px; z-index: 300; display: inline-block;
+	width: 80px; height: 60px;
+	background: url('/image/logo.png') no-repeat; background-size: 95%;
+}
+
+#navi{ width: 85%; height: 90px; text-align: right; }
+.qmenu{margin:auto 0;}
+.qmenu ul{ height: 60px; display: flex; justify-content: right; align-items: center; line-height:30px; padding: 15px 0;}
+.qmenu ul li{ height: 30px;}
+.qmenu li a{ display: inline-block; font-size: 18px; font-weight:600; color: white;
+      width: 100px; height: 30px; letter-spacing: -0.5; text-align: right;}
+.qmenu li a:after{ display: inline-block; content: ""; width: 1px; height: 20px;
+      background: #d3d3d3; margin-left: 13px; vertical-align: middle;}
+#q02{width: 110px;}
+#q03{width: 110px;}
+#q04{width: 140px;}
+#q05{width: 90px;}
+#q06{width: 70px;}
+#q06:after{display: none; content: ""; width: 0;  margin-left: 0;}

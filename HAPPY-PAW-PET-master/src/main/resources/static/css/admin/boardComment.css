@@ -1,0 +1,101 @@
+@charset "UTF-8";
+
+#admin{height: 100%;}       
+section{position: relative; top:100px; left:0; min-height:850px;
+	background-color: #FAF7F0; flex:1; display: flex}
+
+button[type="button"]{ cursor: pointer;}
+
+#s04 { background-color : rgb(209, 209, 209);
+						> a {color: black;}; }		
+
+
+.main{position: relative;
+    width: 80%;
+    margin-left: 310px;
+    padding-top: 40px;
+    padding-left: 40px;
+    box-sizing: border-box;}
+    
+.main > h2{ font-size: 28px; color: #342F2F; text-align: left;
+            font-family: Roboto;
+            font-optical-sizing: auto;
+            font-style: normal; }
+.main > h2 > span { font-weight: 550; border-bottom: 1px solid rgb(209, 209, 209);}
+
+
+#comment{ display: flex;}
+#comment > h4{
+	width : 150px; height :  30px; color: #333; 
+	font-size: 18px;
+    font-weight: 600;
+    box-sizing: border-box;
+    margin: 0 0 10px 0;
+    padding: 0 0 10px 10px; }
+    
+#Canalyst { 
+	margin: 0 0 10px 0px; width:110px; height: 30px; background: black; color: white; font-size: 14px;
+    font-weight: 550; border: none;
+    cursor: pointer; border-radius: 5px;
+}
+
+.boardlist > h4{ width : 100%; height :  30px; color: #333; 
+			font-size: 18px;
+            font-weight: 600;
+            box-sizing: border-box;
+            margin : 0 auto; margin-bottom: 10px;
+            padding: 0 0 10px 10px; }
+.boardlist > h4 > span { font-size: 13px; color: #555;}
+.boardlist{margin-top: 45px; margin-bottom: 30px;}
+.boardlist > button{ margin-top: 10px; width:90px; height: 40px; background: #342F2F; color: white; font-size: 12px;
+            font-weight: 550; border: none; position: relative; left: 1430px;}
+
+
+
+#board {
+		display: table;
+	    width: 100%;
+	    font-size: 15px;
+	    margin: 0 auto;
+	    margin-bottom: 15px;
+	    border-collapse: collapse;
+	    background-color: rgb(246, 246, 246);
+}
+#board > tr,td {border : 1px solid rgb(209,209,209); height: 25px;
+				padding-left: 10px;}
+#board > thead { font-size: 15px; text-align: center; border-left: 1px solid rgb(209,209,209);
+			background-color: rgb(209, 209, 209); border-top: 3px solid rgb(209, 209, 209);}
+			
+#content {
+	max-width: 270px; /* 원하는 최대 너비를 설정하세요 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#rank {
+	padding-left: 0px; 
+	text-align: center; font-weight: 550;
+}
+
+#button {padding-top: 2px; padding-bottom: 2px; padding-left: 23px;}
+
+.click {width: 100px; height: 25px; background-color: black; color: white;
+		font-size: 14px; font-weight: 550; border: none; border-radius: 5px;}
+
+.chart{ 
+	position: relative;
+	width: 100%; display: none; margin: 10px 0 20px 0; 
+	left: 150px}
+
+#chart_g { width: 30%; height: 300px; margin-top: 20px; }
+#chart_a { width: 50%; height: 300px; margin-top: 20px; }
+
+.totalChart{ 
+	position: relative;
+	width: 100%; display: none; margin: 10px 0 20px 0; 
+	left: 0px}
+
+#chartT1 { width: 40%; height: 350px; margin-top: 20px; }
+#chartT2 { width: 60%; height: 350px; margin-top: 20px; }
+

@@ -1,0 +1,100 @@
+/* Main Section */
+*,
+body {
+  margin: 0;
+  padding: 0;
+
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 16px;
+}
+
+section {
+	text-align: center; background-color:  #FAF7F0;
+  	position: relative; top: 60px; width: 100%; min-height: 1000px;
+}
+
+h1 {
+  position: relative;
+  top: 60px;
+  margin-top: 40px;
+  margin-bottom: 50px;
+  font-size: 40px;
+  font-weight: 650;
+}
+
+hr {
+  position: relative;
+  top: 60px;
+  border: 3px solid black;
+  margin-bottom: 30px;
+}
+
+table {
+  position: relative;
+  top: 60px;
+  width: 90%;
+}
+
+tr {
+  height: 50px;
+}
+
+th {
+  font-weight: normal;
+  font-size: 20px;
+}
+
+select,
+input,
+textarea {
+  width: 100%;
+  border: 2px solid #ccc;
+}
+
+
+select {
+  padding: 5px 0px 5px 10px;
+}
+
+
+input {
+  height: 30px;
+  font-size: 16px;
+}
+
+textarea {
+  resize: none;
+}
+
+#bfile {
+  border: none;
+}
+
+.button-wrapper {
+  position: relative;
+  top: 60px;
+  padding-top: 20px;
+  width: 280px;
+  margin: auto;
+}
+
+button {
+  cursor : pointer;	
+  width: 130px;
+  height: 45px;
+
+  font-size: 18px;
+}
+
+.write {
+  color: white;
+  background: #3d3d3d;
+  border: none;
+  margin-right: 15px;
+}
+
+.cancel {
+  color: black;
+  background: white;
+  border: 2px solid #3d3d3d;
+}

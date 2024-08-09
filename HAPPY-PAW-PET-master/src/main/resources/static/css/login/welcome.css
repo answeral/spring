@@ -1,0 +1,79 @@
+@charset "UTF-8";
+
+#welcome{height: 1000px;}   
+
+section{
+    width: 100%; height: 1300px;
+}
+
+/* 서브 이미지 */
+.subBanner { 
+	position: relative;
+    width: 100%;
+    height: 400px;
+    padding-top: 100px;
+    background: url('/image/golden.jpg') no-repeat 0 -500px;
+    background-size: cover;
+    }
+    
+#blank{width: 100%; height: 30px;}
+
+#main{position: relative; width: 1000px; height:800px; margin: 0 auto; 
+	  padding-top:40px; box-sizing: border-box;
+}
+
+/* 회원가입 문구 */
+#sub_top_area {
+    width: 1000px; height: 125px;
+    box-sizing: border-box;
+    padding: 20px 0px 20px;
+    margin: 0 auto;
+}
+#sub_top_area>h3 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+/* 완료 문구 */
+#join_success_div {
+    width: 1000px; height: 250px;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 66px 0px;
+    margin: 0 auto;
+    border: 1px solid rgb(231, 231, 231);
+}
+#join_success_div p{
+    width: 998px; height: 90px;
+    color: rgb(102, 102, 102);
+    font-size: 32px;
+    margin-bottom: 25px;
+    line-height: 150%;
+}
+#join_success_div strong {
+    display: block;
+    width: 998px; height: 42px;
+    font-weight: 800%;
+    color: rgb(51, 51, 51);
+}
+
+/* 로그인 하러 가기 */
+#go_login{
+    width: 300px; 
+    height: 60px; 
+    background-color: black; 
+    color: white;
+    display: inline-block; 
+    position: relative; 
+    margin: 20px auto; 
+    font-size: 23px; 
+    font-weight: 650;
+    border-radius: 10px; 
+    text-align: center; 
+    box-sizing: border-box;
+    top: 80px;
+}

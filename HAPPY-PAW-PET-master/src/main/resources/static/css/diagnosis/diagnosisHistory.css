@@ -1,0 +1,58 @@
+.diagnosis-able{
+	position: relative;
+	top: 35px;
+}
+
+.diagnosis-able > h3{
+	font-size: 20px;
+}
+
+.diagnosis-able > ul{
+	position: relative;
+	left: 50px;
+	top: 15px;
+	width: 150px;
+	text-align: left;
+}
+
+#diag-title {
+	font-size: 17px;
+}
+
+.diagnosis-able > ul >li{
+	font-size: 15px;
+	margin-top: 5px;
+}
+
+.diagnosis-able > ul > li > a{
+	color: black;
+}
+
+/*---------------------------------------------------*/
+
+.diagnosis-history {
+	position: relative; top: 60px;
+	margin-top: 20px;
+}
+
+.diagnosis-history > h3{
+	width: 90%;
+	font-size: 20px;
+}
+
+.diagnosis-history > ul{
+	position: relative;
+	left: 50px;
+	top: 15px;
+	width: 150px;
+	text-align: left;
+}
+
+.diagnosis-history > ul >li{
+	margin-top: 5px;
+	font-size: 15px;
+}
+
+.diagnosis-history > ul > li > a{
+	color: black;
+}

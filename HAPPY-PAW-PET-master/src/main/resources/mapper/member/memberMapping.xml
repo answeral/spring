@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.java.dao.MemberDao">
+	<!-- happymem 로그인 -->
+	<select id="selectLogin" resultType="com.java.dto.MemberDto">
+		select * from happymem where id=#{id} and pw=#{pw}
+	</select>
+	<!-- happymem 아이디찾기 -->
+	<select id="findId" resultType="com.java.dto.MemberDto">
+		select * from happymem where name=#{name_v} and email=#{fullEmail}
+	</select>
+	<!-- happymem 아이디중복찾기 -->
+	<select id="compareId" resultType="com.java.dto.MemberDto">
+		select * from happymem where id=#{id}
+	</select>
+	<!-- happymem 회원가입 -->
+	<insert id="joinMem">
+		insert into happymem (id, pw, name, birth, gender, phone, email, profile, age)
+		values (#{id}, #{pw2}, #{name}, #{birth}, #{genderC}, #{fullTell}, #{fullEmail}, 'default.jpg', EXTRACT(YEAR FROM SYSDATE) - EXTRACT(YEAR FROM #{birth}))
+	</insert>
+	<update id="updatePwcode">
+		update happymem set pw=#{pw} where id=#{id}
+	</update>
+	<!-- 회원 정보 수정 위한 회원정보 가져오기 -->
+	<select id="InfoMem" resultType="com.java.dto.MemberDto">
+		select * from happymem where id=#{sessionId}
+	</select>
+	<!-- 회원 정보 수정 후 업데이트 -->
+	<update id="doUpdateMem">
+		update happymem
+		set pw=#{pw}, birth=#{birth}, gender=#{gender}, phone=#{phone}, email=#{email} ,age=EXTRACT(YEAR FROM SYSDATE) - EXTRACT(YEAR FROM #{birth})
+		where id=#{id}
+	</update>
+	<!-- 회원 프로필 사진 업데이트 -->
+	<update id="mainFile">
+		update happymem set profile=#{profile} where id=#{id}
+	</update>
+
+	<!-- happymem 관리자페이지 멤버리스트 -->
+	<select id="memList" resultType="com.java.dto.MemberDto">
+		select * from happymem
+	</select>
+
+	<!-- happymem 회원탈퇴 -->
+	<delete id="deleteMem">
+		delete from happymem where id=#{id} and name=#{name}
+	</delete>
+	<!-- 반려동물 id로 보호자 정보조회 -->
+	<select id="memView" resultType="com.java.dto.MemberDto">
+		select * from happymem where id=#{id}
+	</select>
+
+	<!-- 회원정보 수정을 위한 pw 조회 -->
+	<select id="checkPw" resultType="com.java.dto.MemberDto">
+		select * from happymem where id=#{id}
+	</select>
+
+	<!-- 비밀번호 변경 업데이트 -->
+	<update id="doChangePw">
+		update happymem set pw=#{newPw2} where id=#{id}
+	</update>
+
+</mapper>
